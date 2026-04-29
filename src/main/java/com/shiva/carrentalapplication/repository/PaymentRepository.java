@@ -1,0 +1,10 @@
+package com.shiva.carrentalapplication.repository;
+
+import com.shiva.carrentalapplication.entity.Payment;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
+    Optional<Payment> findByBookingId(Long bookingId);
+    Optional<Payment> findByTransactionId(String transactionId);
+}
